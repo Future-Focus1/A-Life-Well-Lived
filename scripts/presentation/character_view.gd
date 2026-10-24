@@ -12,15 +12,21 @@ var _base: Texture2D
 
 
 func _ready() -> void:
+	_prepare()
+
+
+func _prepare() -> void:
 	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	_atlas = AtlasTexture.new()
-	texture = _atlas
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	if _atlas == null:
+		_atlas = AtlasTexture.new()
+		texture = _atlas
 
 
 func show_person(stage: String, appearance: Dictionary, anim_id: String, portrait: bool = false) -> void:
+	_prepare()
 	var next := anim_id if anim_id != "" else "idle"
 	if _base == null or stage != _stage or appearance != _look or portrait != _portrait:
 		_stage = stage
@@ -41,7 +47,7 @@ func show_person(stage: String, appearance: Dictionary, anim_id: String, portrai
 
 
 func _process(delta: float) -> void:
-	if _portrait or _base == null:
+	if _portrait or _base == null or _atlas == null:
 		return
 	_time += delta
 	var frames := maxi(1, int(_def.get("frames", 1)))
@@ -57,6 +63,9 @@ func _process(delta: float) -> void:
 
 
 func _apply_frame(frame: int) -> void:
+	_prepare()
+	if _base == null:
+		return
 	if _portrait:
 		_atlas.atlas = _base
 		_atlas.region = Rect2(0, 0, _base.get_width(), _base.get_height())

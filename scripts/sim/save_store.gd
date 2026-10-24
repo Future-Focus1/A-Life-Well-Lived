@@ -5,8 +5,13 @@ extends RefCounted
 
 
 static func ensure(root: String) -> void:
-	var folder := root.trim_suffix("/")
-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(folder))
+	var folder := root
+	if folder.ends_with("/") and not folder.ends_with("://"):
+		folder = folder.trim_suffix("/")
+	var absolute := ProjectSettings.globalize_path(folder)
+	if absolute == "":
+		return
+	DirAccess.make_dir_recursive_absolute(absolute)
 
 
 static func file(root: String, name: String) -> String:
