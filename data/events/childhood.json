@@ -1,0 +1,467 @@
+[
+  {
+    "weight": 12,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "idle",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "cry",
+        "label": "Wail until held.",
+        "effects": {
+          "stats": {
+            "happiness": 4
+          }
+        },
+        "outcomes": [
+          {
+            "id": "held",
+            "weight": 1,
+            "text": "Arms arrive. The world gets warmer.",
+            "effects": {
+              "stats": {
+                "happiness": 3
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "stare",
+        "label": "Stare at the light.",
+        "effects": {
+          "stats": {
+            "intelligence": 1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "quiet",
+            "weight": 1,
+            "text": "You study the brightness and go quiet.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "first_breath",
+    "category": "childhood",
+    "text": "The room leans in. Someone says your name like a gift.",
+    "min_age": 0,
+    "max_age": 1,
+    "at_age": 0
+  },
+  {
+    "weight": 10,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "walk",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "toddle",
+        "label": "Try a wobbly step.",
+        "effects": {
+          "stats": {
+            "fitness": 3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "step",
+            "weight": 1,
+            "text": "Two steps, then a proud sit.",
+            "effects": {
+              "stats": {
+                "happiness": 4
+              }
+            },
+            "animation": "celebrate"
+          }
+        ]
+      },
+      {
+        "id": "carried",
+        "label": "Reach up to be carried.",
+        "effects": {
+          "stats": {
+            "happiness": 3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "up",
+            "weight": 1,
+            "text": "You travel by hip, which is faster.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "first_steps",
+    "category": "childhood",
+    "text": "Your legs have a new idea. The floor looks far away.",
+    "min_age": 1,
+    "max_age": 3,
+    "at_age": 1
+  },
+  {
+    "weight": 8,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "sit",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "help",
+        "label": "Help set the table.",
+        "effects": {
+          "stats": {
+            "happiness": 3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "praise",
+            "weight": 1,
+            "text": "Someone notices. It feels enormous.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "hide",
+        "label": "Hide under the table.",
+        "effects": {
+          "stats": {
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "giggle",
+            "weight": 1,
+            "text": "Feet pass by. You giggle anyway.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "family_supper",
+    "category": "family",
+    "text": "The household gathers, noisy and warm, around one table.",
+    "min_age": 3,
+    "max_age": 6,
+    "at_age": 4
+  },
+  {
+    "weight": 10,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "school",
+    "animation": "worried",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "enter",
+        "label": "Walk in without looking back.",
+        "effects": {
+          "stats": {
+            "confidence": 0,
+            "stress": 4,
+            "charisma": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "class",
+            "weight": 1,
+            "text": "A chair has your name on a sticker.",
+            "effects": {
+              "education": "school"
+            }
+          }
+        ]
+      },
+      {
+        "id": "cling",
+        "label": "Cling to a parent a moment.",
+        "effects": {
+          "stats": {
+            "stress": 2,
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "wave",
+            "weight": 1,
+            "text": "You wave, then you go.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "school_gate",
+    "category": "education",
+    "text": "School doors open. Everyone seems to know a secret.",
+    "min_age": 6,
+    "max_age": 8,
+    "at_age": 7
+  },
+  {
+    "weight": 40,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "derek",
+    "background": "school",
+    "animation": "walk",
+    "npc": "derek",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {
+      "flags_set": [
+        "met_derek"
+      ],
+      "ensure_npc": {
+        "id": "derek",
+        "name": "Derek",
+        "role": "friend",
+        "affection": 30,
+        "circumstances": "Lives nearby",
+        "history": "Met Derek as children.",
+        "appearance": {
+          "hair": "short",
+          "hair_color": "black",
+          "skin": "tan",
+          "eyes": "brown"
+        }
+      }
+    },
+    "choices": [
+      {
+        "id": "race",
+        "label": "Race him and laugh.",
+        "effects": {
+          "stats": {
+            "fitness": 3,
+            "happiness": 4
+          },
+          "npc_patch": {
+            "id": "derek",
+            "affection_delta": 8,
+            "history": "Raced to the corner."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "tie",
+            "weight": 1,
+            "text": "It is a tie, which he disputes.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "walk",
+        "label": "Walk and talk instead.",
+        "effects": {
+          "stats": {
+            "charisma": 3
+          },
+          "npc_patch": {
+            "id": "derek",
+            "affection_delta": 6,
+            "history": "Walked home together."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "talk",
+            "weight": 1,
+            "text": "He tells a terrible joke. You keep it.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "meet_derek",
+    "category": "social",
+    "text": "A boy named Derek dares you to race to the corner.",
+    "min_age": 8,
+    "max_age": 10,
+    "at_age": 9
+  },
+  {
+    "weight": 7,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "school",
+    "animation": "confused",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "share",
+        "label": "Ask to share the swing.",
+        "effects": {
+          "stats": {
+            "charisma": 3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "yes",
+            "weight": 1,
+            "text": "They shrug and make room.",
+            "effects": {
+              "stats": {
+                "happiness": 3
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "rough",
+        "label": "Play somewhere rougher.",
+        "effects": {
+          "stats": {
+            "fitness": 3,
+            "health": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "scrape",
+            "weight": 1,
+            "text": "A scraped knee, and a story.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "playground",
+    "category": "childhood",
+    "text": "The big kids hold the good swing and watch you.",
+    "min_age": 10,
+    "max_age": 12,
+    "at_age": 11
+  },
+  {
+    "weight": 8,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "school",
+    "animation": "embarrassed",
+    "npc": "",
+    "placeholders": [],
+    "bias": {
+      "creativity": 1.0
+    },
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "perform",
+        "label": "Perform anyway.",
+        "effects": {
+          "stats": {
+            "confidence": 0,
+            "stress": 4
+          }
+        },
+        "outcomes": [
+          {
+            "id": "cheer",
+            "weight": 1,
+            "text": "The clapping surprises you.",
+            "effects": {
+              "stats": {
+                "happiness": 8,
+                "charisma": 4
+              },
+              "achievement": "Performed in the school show",
+              "memorable": "Performed in the school show."
+            },
+            "animation": "celebrate"
+          }
+        ]
+      },
+      {
+        "id": "watch",
+        "label": "Watch from the seats.",
+        "effects": {
+          "stats": {
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "clap",
+            "weight": 1,
+            "text": "You clap the loudest for a friend.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "talent_show",
+    "category": "childhood",
+    "text": "The school show needs one more act before Friday.",
+    "min_age": 11,
+    "max_age": 13,
+    "at_age": 12
+  }
+]

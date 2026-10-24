@@ -1,0 +1,780 @@
+[
+  {
+    "weight": 40,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "kathy",
+    "background": "school",
+    "animation": "embarrassed",
+    "npc": "kathy",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {
+      "flags_set": [
+        "met_kathy"
+      ],
+      "ensure_npc": {
+        "id": "kathy",
+        "name": "Kathy",
+        "role": "crush",
+        "affection": 28,
+        "circumstances": "At school",
+        "history": "Met Kathy.",
+        "appearance": {
+          "hair": "long",
+          "hair_color": "auburn",
+          "skin": "fair",
+          "eyes": "green"
+        }
+      }
+    },
+    "choices": [
+      {
+        "id": "joke",
+        "label": "Tell the rest of the joke.",
+        "effects": {
+          "stats": {
+            "charisma": 3
+          },
+          "npc_patch": {
+            "id": "kathy",
+            "name": "Kathy",
+            "affection_delta": 10,
+            "role": "crush",
+            "history": "Shared a joke."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "laugh",
+            "weight": 1,
+            "text": "She laughs again. You keep the sound.",
+            "effects": {},
+            "animation": "laugh"
+          }
+        ]
+      },
+      {
+        "id": "quiet",
+        "label": "Smile and say little.",
+        "effects": {
+          "stats": {
+            "stress": 2
+          },
+          "npc_patch": {
+            "id": "kathy",
+            "name": "Kathy",
+            "affection_delta": 4,
+            "role": "crush",
+            "history": "Met quietly."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "nod",
+            "weight": 1,
+            "text": "She nods like she understood anyway.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "meet_kathy",
+    "category": "romance",
+    "text": "Kathy laughs at a joke you almost did not tell.",
+    "min_age": 14,
+    "max_age": 16,
+    "at_age": 15
+  },
+  {
+    "weight": 9,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "school",
+    "animation": "worried",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "study",
+        "label": "Study until the page blurs.",
+        "effects": {
+          "stats": {
+            "stress": 6,
+            "intelligence": 4
+          }
+        },
+        "outcomes": [
+          {
+            "id": "pass",
+            "weight": 1,
+            "text": "The answers are tired, but present.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "sleep",
+        "label": "Sleep and trust the morning.",
+        "effects": {
+          "stats": {
+            "stress": -4,
+            "health": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "rested",
+            "weight": 1,
+            "text": "You wake clearer than you feared.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "exam_nerves",
+    "category": "education",
+    "text": "Tomorrow's exam is already sitting on your chest.",
+    "min_age": 16,
+    "max_age": 17,
+    "at_age": 16
+  },
+  {
+    "weight": 80,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "education",
+    "background": "school",
+    "animation": "confused",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "kathy_uni",
+        "label": "Apply to Kathy's university.",
+        "effects": {
+          "flags_set": [
+            "kathy_university",
+            "in_university"
+          ],
+          "stats": {
+            "happiness": 8,
+            "stress": 6
+          },
+          "debt": 18,
+          "education": "university",
+          "memorable": "Chose Kathy's university.",
+          "npc_patch": {
+            "id": "kathy",
+            "name": "Kathy",
+            "affection_delta": 18,
+            "role": "classmate",
+            "history": "Chose Kathy's university.",
+            "circumstances": "Same university",
+            "appearance": {
+              "hair": "long",
+              "hair_color": "auburn",
+              "skin": "fair",
+              "eyes": "green"
+            }
+          }
+        },
+        "outcomes": [
+          {
+            "id": "in",
+            "weight": 1,
+            "text": "You both get in. She saves you a seat.",
+            "effects": {
+              "achievement": "Started university with Kathy",
+              "stats": {
+                "happiness": 4
+              }
+            },
+            "animation": "love"
+          }
+        ],
+        "animation": "love",
+        "followups": [
+          "path_kathy"
+        ]
+      },
+      {
+        "id": "prestige_uni",
+        "label": "Take the prestigious university.",
+        "effects": {
+          "flags_set": [
+            "prestigious_university",
+            "in_university",
+            "family_proud"
+          ],
+          "stats": {
+            "stress": 12,
+            "intelligence": 4
+          },
+          "debt": 28,
+          "education": "prestigious",
+          "memorable": "Chose a prestigious university."
+        },
+        "outcomes": [
+          {
+            "id": "hard",
+            "weight": 1,
+            "text": "The reading list weighs more than you do.",
+            "effects": {
+              "stats": {
+                "stress": 4
+              }
+            }
+          }
+        ],
+        "animation": "worried",
+        "followups": [
+          "path_prestige"
+        ]
+      },
+      {
+        "id": "skip_work",
+        "label": "Skip university and work.",
+        "effects": {
+          "flags_set": [
+            "skipped_university",
+            "working_early"
+          ],
+          "stats": {
+            "wealth": 20,
+            "stress": -4
+          },
+          "education": "apprenticeship",
+          "employment": "employed",
+          "career": "Apprentice",
+          "income": 8,
+          "memorable": "Skipped university to work."
+        },
+        "outcomes": [
+          {
+            "id": "wage",
+            "weight": 1,
+            "text": "A wage arrives early. The lectures do not.",
+            "effects": {},
+            "animation": "earn_money"
+          }
+        ],
+        "animation": "earn_money",
+        "followups": [
+          "path_work"
+        ]
+      },
+      {
+        "id": "derek_uni",
+        "label": "Go to Derek's university.",
+        "effects": {
+          "flags_set": [
+            "derek_university",
+            "in_university"
+          ],
+          "stats": {
+            "happiness": 5,
+            "stress": 5
+          },
+          "debt": 14,
+          "education": "university",
+          "memorable": "Went to Derek's university.",
+          "npc_patch": {
+            "id": "derek",
+            "name": "Derek",
+            "affection_delta": 16,
+            "role": "classmate",
+            "history": "Went to Derek's university.",
+            "circumstances": "Same campus",
+            "appearance": {
+              "hair": "short",
+              "hair_color": "black",
+              "skin": "tan",
+              "eyes": "brown"
+            }
+          }
+        },
+        "outcomes": [
+          {
+            "id": "dorm",
+            "weight": 1,
+            "text": "Derek throws a sheet over the spare bed.",
+            "effects": {
+              "achievement": "Started university with Derek"
+            },
+            "animation": "laugh"
+          }
+        ],
+        "animation": "laugh",
+        "followups": [
+          "path_derek"
+        ]
+      }
+    ],
+    "id": "grad_fork",
+    "category": "education",
+    "text": "You've graduated. What next?",
+    "min_age": 18,
+    "max_age": 18,
+    "at_age": 18
+  },
+  {
+    "weight": 30,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "kathy",
+    "background": "university",
+    "animation": "love",
+    "npc": "kathy",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "kathy_university"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "ask",
+        "label": "Ask her to the spring fair.",
+        "effects": {
+          "flags_set": [
+            "kathy_dating"
+          ],
+          "relationship_status": "dating",
+          "memorable": "Started dating Kathy.",
+          "relationship_note": "Dated Kathy.",
+          "npc_patch": {
+            "id": "kathy",
+            "name": "Kathy",
+            "affection_delta": 20,
+            "role": "partner",
+            "history": "Started dating.",
+            "circumstances": "Dating"
+          }
+        },
+        "outcomes": [
+          {
+            "id": "yes",
+            "weight": 1,
+            "text": "She says yes before you finish asking.",
+            "effects": {},
+            "animation": "love"
+          }
+        ],
+        "animation": "love",
+        "followups": [
+          "kathy_proposal"
+        ]
+      },
+      {
+        "id": "friends",
+        "label": "Keep the friendship easy.",
+        "effects": {
+          "flags_set": [
+            "kathy_friends"
+          ],
+          "npc_patch": {
+            "id": "kathy",
+            "name": "Kathy",
+            "affection_delta": 4,
+            "role": "friend",
+            "history": "Stayed friends at university."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "easy",
+            "weight": 1,
+            "text": "The coffees stay friendly, and that is plenty.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "path_kathy",
+    "category": "romance",
+    "text": "Kathy waves from the university gate with two coffees.",
+    "min_age": 20,
+    "max_age": 20,
+    "at_age": 20
+  },
+  {
+    "weight": 30,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "derek",
+    "background": "university",
+    "animation": "laugh",
+    "npc": "derek",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "derek_university"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "flat",
+        "label": "Share the flat with Derek.",
+        "effects": {
+          "flags_set": [
+            "derek_close"
+          ],
+          "npc_patch": {
+            "id": "derek",
+            "affection_delta": 12,
+            "role": "classmate",
+            "history": "Shared a flat.",
+            "circumstances": "Flatmates"
+          }
+        },
+        "outcomes": [
+          {
+            "id": "poster",
+            "weight": 1,
+            "text": "The poster stays. So does he.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "room",
+        "label": "Keep your own room.",
+        "effects": {
+          "stats": {
+            "stress": -2
+          },
+          "npc_patch": {
+            "id": "derek",
+            "affection_delta": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "space",
+            "weight": 1,
+            "text": "You visit, then you leave the mess.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "path_derek",
+    "category": "social",
+    "text": "Derek has a spare key and a terrible poster.",
+    "min_age": 20,
+    "max_age": 20,
+    "at_age": 20
+  },
+  {
+    "weight": 30,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "education",
+    "background": "university",
+    "animation": "worried",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "prestigious_university"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "join",
+        "label": "Join the hard program.",
+        "effects": {
+          "flags_set": [
+            "elite_program"
+          ],
+          "stats": {
+            "intelligence": 6,
+            "stress": 8
+          }
+        },
+        "outcomes": [
+          {
+            "id": "grind",
+            "weight": 1,
+            "text": "You learn quickly and sleep less.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "coast",
+        "label": "Coast and protect your sleep.",
+        "effects": {
+          "flags_set": [
+            "coasting"
+          ],
+          "stats": {
+            "happiness": 4,
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "easy",
+            "weight": 1,
+            "text": "The grades survive. Your nerves do too.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "path_prestige",
+    "category": "education",
+    "text": "The prestigious course drops a frightening reading list.",
+    "min_age": 20,
+    "max_age": 20,
+    "at_age": 20
+  },
+  {
+    "weight": 30,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "career",
+    "background": "office",
+    "animation": "earn_money",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "skipped_university"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "sign",
+        "label": "Sign the apprenticeship.",
+        "effects": {
+          "flags_set": [
+            "trade_path"
+          ],
+          "qualification": "Apprenticeship",
+          "career": "Apprentice",
+          "employment": "employed",
+          "income": 9
+        },
+        "outcomes": [
+          {
+            "id": "tools",
+            "weight": 1,
+            "text": "The tools fit your hands better than pens did.",
+            "effects": {
+              "achievement": "Started an apprenticeship"
+            }
+          }
+        ]
+      },
+      {
+        "id": "shifts",
+        "label": "Take whatever shift pays.",
+        "effects": {
+          "employment": "employed",
+          "career": "Clerk",
+          "income": 7,
+          "stats": {
+            "stress": 3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "cash",
+            "weight": 1,
+            "text": "The cash is small and on time.",
+            "effects": {},
+            "animation": "earn_money"
+          }
+        ]
+      }
+    ],
+    "id": "path_work",
+    "category": "career",
+    "text": "Your first real shift starts before the sun.",
+    "min_age": 20,
+    "max_age": 20,
+    "at_age": 20
+  },
+  {
+    "weight": 40,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "education",
+    "background": "university",
+    "animation": "celebrate",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "in_university"
+      ]
+    },
+    "excludes": {
+      "flags": [
+        "skipped_university"
+      ]
+    },
+    "on_present": {},
+    "choices": [
+      {
+        "id": "job",
+        "label": "Start the graduate job.",
+        "effects": {
+          "flags_set": [
+            "degree"
+          ],
+          "qualification": "University degree",
+          "employment": "employed",
+          "career": "Graduate",
+          "income": 14,
+          "achievement": "Earned a degree",
+          "memorable": "Earned a degree."
+        },
+        "outcomes": [
+          {
+            "id": "desk",
+            "weight": 1,
+            "text": "A desk, a badge, and a new kind of tired.",
+            "effects": {},
+            "animation": "earn_money"
+          }
+        ]
+      },
+      {
+        "id": "study",
+        "label": "Keep studying a while longer.",
+        "effects": {
+          "flags_set": [
+            "degree"
+          ],
+          "qualification": "University degree",
+          "stats": {
+            "intelligence": 5,
+            "stress": 4
+          },
+          "achievement": "Earned a degree"
+        },
+        "outcomes": [
+          {
+            "id": "more",
+            "weight": 1,
+            "text": "The library still knows your name.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "degree_day",
+    "category": "education",
+    "text": "Results day. Your name is on the pass list.",
+    "min_age": 22,
+    "max_age": 22,
+    "at_age": 22
+  },
+  {
+    "weight": 4,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "confused",
+    "npc": "",
+    "placeholders": [],
+    "bias": {
+      "kindness": 0.8
+    },
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "return",
+        "label": "Hand it in.",
+        "effects": {
+          "stats": {
+            "happiness": 4,
+            "luck": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "thanks",
+            "weight": 1,
+            "text": "The owner cries in a grateful way.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "keep",
+        "label": "Keep the cash inside.",
+        "effects": {
+          "stats": {
+            "wealth": 15,
+            "stress": 6
+          }
+        },
+        "outcomes": [
+          {
+            "id": "heavy",
+            "weight": 1,
+            "text": "The money is light. The feeling is not.",
+            "effects": {},
+            "animation": "lose_money"
+          }
+        ]
+      }
+    ],
+    "id": "found_wallet",
+    "category": "luck",
+    "text": "A wallet sits on a bench, fat and unattended.",
+    "min_age": 17,
+    "max_age": 19,
+    "at_age": 17
+  }
+]

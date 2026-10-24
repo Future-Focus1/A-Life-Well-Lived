@@ -1,0 +1,2117 @@
+[
+  {
+    "weight": 18,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": true,
+    "storyline": "",
+    "background": "apartment",
+    "animation": "confused",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "take",
+        "label": "Take up smoking.",
+        "effects": {
+          "flags_set": [
+            "smoker"
+          ],
+          "stats": {
+            "stress": -4,
+            "health": -2
+          },
+          "memorable": "Started smoking."
+        },
+        "outcomes": [
+          {
+            "id": "light",
+            "weight": 1,
+            "text": "The first one tastes like a dare.",
+            "effects": {
+              "stats": {
+                "stress": -2
+              }
+            }
+          }
+        ],
+        "delayed": [
+          {
+            "id": "smoke_45",
+            "due_age": 45,
+            "chance": 0.8,
+            "text": "Old smoke sits in the lungs.",
+            "effects": {
+              "stats": {
+                "health": -16
+              },
+              "condition": "smoker's cough",
+              "memorable": "Smoking hurt their health in midlife."
+            }
+          },
+          {
+            "id": "smoke_62",
+            "due_age": 62,
+            "chance": 0.65,
+            "text": "A doctor names the old damage.",
+            "effects": {
+              "stats": {
+                "health": -20
+              },
+              "flags_set": [
+                "ill"
+              ],
+              "condition": "lung disease",
+              "memorable": "Illness followed years of smoking."
+            }
+          }
+        ]
+      },
+      {
+        "id": "drink",
+        "label": "Share a drink instead.",
+        "effects": {
+          "flags_set": [
+            "heavy_drinker"
+          ],
+          "stats": {
+            "happiness": 2,
+            "health": -1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "round",
+            "weight": 1,
+            "text": "The round is cheerful and a little too long.",
+            "effects": {}
+          }
+        ],
+        "delayed": [
+          {
+            "id": "drink_50",
+            "due_age": 50,
+            "chance": 0.55,
+            "text": "The drinking leaves a mark.",
+            "effects": {
+              "stats": {
+                "health": -12
+              },
+              "condition": "liver strain"
+            }
+          }
+        ]
+      },
+      {
+        "id": "decline",
+        "label": "Decline and walk off.",
+        "effects": {
+          "flags_set": [
+            "declined_smoke"
+          ],
+          "stats": {
+            "health": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "air",
+            "weight": 1,
+            "text": "The air outside is ordinary and good.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "smoke_offer",
+    "category": "health",
+    "text": "Someone offers a cigarette behind the shops.",
+    "min_age": 21,
+    "max_age": 36,
+    "at_age": 23,
+    "catch_at": 30
+  },
+  {
+    "weight": 14,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": true,
+    "storyline": "",
+    "background": "home",
+    "animation": "walk",
+    "npc": "",
+    "placeholders": [],
+    "bias": {
+      "athleticism": 1.0
+    },
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "train",
+        "label": "Train most days.",
+        "effects": {
+          "flags_set": [
+            "fit"
+          ],
+          "stats": {
+            "fitness": 12,
+            "health": 8,
+            "stress": -4
+          },
+          "memorable": "Built an exercise habit."
+        },
+        "outcomes": [
+          {
+            "id": "strong",
+            "weight": 1,
+            "text": "Your lungs start answering faster.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "sometimes",
+        "label": "Go sometimes.",
+        "effects": {
+          "stats": {
+            "fitness": 4,
+            "health": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "some",
+            "weight": 1,
+            "text": "Some weeks stick. Some do not.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "skip",
+        "label": "Skip it and sit down.",
+        "effects": {
+          "flags_set": [
+            "sedentary"
+          ],
+          "stats": {
+            "fitness": -4,
+            "stress": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "sofa",
+            "weight": 1,
+            "text": "The sofa wins on points.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "exercise_choice",
+    "category": "health",
+    "text": "A friend bets you cannot keep an exercise habit.",
+    "min_age": 24,
+    "max_age": 48,
+    "at_age": 25,
+    "catch_at": 41
+  },
+  {
+    "weight": 40,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "",
+    "background": "apartment",
+    "animation": "worried",
+    "npc": "",
+    "placeholders": [],
+    "bias": {
+      "risk_tolerance": 1.2
+    },
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "jump",
+        "label": "Jump.",
+        "effects": {},
+        "outcomes": [
+          {
+            "id": "fine",
+            "weight": 50,
+            "text": "The water slaps, then you surface grinning.",
+            "effects": {
+              "stats": {
+                "happiness": 6,
+                "health": -4
+              },
+              "achievement": "Jumped the river bridge",
+              "memorable": "Jumped the river bridge."
+            },
+            "animation": "jump"
+          },
+          {
+            "id": "minor",
+            "weight": 30,
+            "text": "You clip the pier. A sprain, and a story.",
+            "effects": {
+              "stats": {
+                "health": -12
+              },
+              "flags_set": [
+                "injured"
+              ]
+            },
+            "animation": "injured"
+          },
+          {
+            "id": "serious",
+            "weight": 15,
+            "text": "The current wins for a minute. Your ribs remember.",
+            "effects": {
+              "stats": {
+                "health": -28
+              },
+              "flags_set": [
+                "serious_injury"
+              ],
+              "condition": "injured ribs"
+            },
+            "animation": "injured"
+          },
+          {
+            "id": "death",
+            "weight": 5,
+            "text": "The river does not give you back.",
+            "effects": {},
+            "death": "accident",
+            "animation": "dying"
+          }
+        ],
+        "animation": "jump"
+      },
+      {
+        "id": "refuse",
+        "label": "Refuse and step back.",
+        "effects": {
+          "stats": {
+            "stress": -3,
+            "happiness": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "dry",
+            "weight": 1,
+            "text": "You keep your feet dry and your pulse loud.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "persuade",
+        "label": "Talk everyone down.",
+        "effects": {},
+        "outcomes": [
+          {
+            "id": "hero",
+            "weight": 7,
+            "text": "They laugh, then follow you off the bridge.",
+            "effects": {
+              "stats": {
+                "charisma": 6,
+                "happiness": 5
+              },
+              "achievement": "Talked friends off the bridge",
+              "memorable": "Talked friends off the bridge."
+            }
+          },
+          {
+            "id": "mocked",
+            "weight": 3,
+            "text": "Someone calls you scared. The group splits.",
+            "effects": {
+              "stats": {
+                "happiness": -6,
+                "stress": 6
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "record",
+        "label": "Record it instead of jumping.",
+        "effects": {
+          "stats": {
+            "wealth": 12,
+            "stress": 4
+          },
+          "memorable": "Filmed the bridge dare instead of jumping."
+        },
+        "outcomes": [
+          {
+            "id": "clip",
+            "weight": 1,
+            "text": "The clip travels. So does a little regret.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "bridge_dare",
+    "category": "adventure",
+    "text": "Night on the river bridge. Someone dares a jump.",
+    "min_age": 29,
+    "max_age": 29,
+    "at_age": 29
+  },
+  {
+    "weight": 30,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "kathy",
+    "background": "home",
+    "animation": "love",
+    "npc": "kathy",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "kathy_dating"
+      ],
+      "missing_flags": [
+        "kathy_married",
+        "kathy_ended"
+      ],
+      "npc_id": "kathy",
+      "npc_alive": true
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "propose",
+        "label": "Ask Kathy to marry you.",
+        "effects": {},
+        "outcomes": [
+          {
+            "id": "yes",
+            "weight": 3,
+            "text": "She says yes. The room feels larger.",
+            "effects": {
+              "flags_set": [
+                "kathy_married"
+              ],
+              "relationship_status": "married",
+              "marriages": 1,
+              "memorable": "Married Kathy.",
+              "relationship_note": "Married Kathy.",
+              "achievement": "Married Kathy",
+              "npc_patch": {
+                "id": "kathy",
+                "name": "Kathy",
+                "role": "spouse",
+                "affection_delta": 15,
+                "circumstances": "Married",
+                "history": "Married Kathy."
+              }
+            },
+            "animation": "love"
+          },
+          {
+            "id": "no",
+            "weight": 1,
+            "text": "She loves you, and still says not yet.",
+            "effects": {
+              "flags_set": [
+                "kathy_rejected"
+              ],
+              "relationship_status": "dating",
+              "npc_patch": {
+                "id": "kathy",
+                "affection_delta": -12,
+                "history": "Turned down a proposal."
+              }
+            }
+          }
+        ],
+        "animation": "love"
+      },
+      {
+        "id": "wait",
+        "label": "Wait for another year.",
+        "effects": {
+          "stats": {
+            "stress": 2
+          },
+          "npc_patch": {
+            "id": "kathy",
+            "affection_delta": -4
+          }
+        },
+        "outcomes": [
+          {
+            "id": "later",
+            "weight": 1,
+            "text": "The year stays ordinary.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "end",
+        "label": "End it gently.",
+        "effects": {
+          "flags_set": [
+            "kathy_ended"
+          ],
+          "relationship_status": "single",
+          "npc_patch": {
+            "id": "kathy",
+            "role": "ex",
+            "affection_delta": -10,
+            "history": "You ended things."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "soft",
+            "weight": 1,
+            "text": "It ends without a scene. It still hurts.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "kathy_proposal",
+    "category": "romance",
+    "text": "Kathy is quiet in the good way. The moment is here.",
+    "min_age": 32,
+    "max_age": 32,
+    "at_age": 32
+  },
+  {
+    "weight": 10,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "kathy",
+    "background": "home",
+    "animation": "love",
+    "npc": "kathy",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "kathy_married"
+      ],
+      "relationship": [
+        "married"
+      ],
+      "npc_id": "kathy",
+      "npc_alive": true
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "trip",
+        "label": "Plan a small trip together.",
+        "effects": {
+          "stats": {
+            "happiness": 6,
+            "wealth": -8
+          },
+          "npc_patch": {
+            "id": "kathy",
+            "affection_delta": 6,
+            "history": "Took a trip together."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "train",
+            "weight": 1,
+            "text": "The train is late. You do not mind.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "nest",
+        "label": "Nest in and fix the door.",
+        "effects": {
+          "stats": {
+            "happiness": 3
+          },
+          "housing": "house"
+        },
+        "outcomes": [
+          {
+            "id": "home",
+            "weight": 1,
+            "text": "The squeak goes. The quiet stays.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "married_life",
+    "category": "romance",
+    "text": "Married life with Kathy has a rhythm and a squeaky door.",
+    "min_age": 34,
+    "max_age": 42,
+    "at_age": 35
+  },
+  {
+    "weight": 12,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "confused",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "relationship": [
+        "married"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "try",
+        "label": "Try for a child.",
+        "effects": {},
+        "outcomes": [
+          {
+            "id": "baby",
+            "weight": 3,
+            "text": "A baby arrives, loud and astonishing.",
+            "effects": {
+              "add_child": true,
+              "stats": {
+                "happiness": 10,
+                "stress": 6
+              }
+            },
+            "animation": "hold_baby"
+          },
+          {
+            "id": "notyet",
+            "weight": 1,
+            "text": "Not this year. You keep the conversation.",
+            "effects": {
+              "stats": {
+                "stress": 2
+              }
+            }
+          }
+        ],
+        "animation": "hold_baby"
+      },
+      {
+        "id": "not_now",
+        "label": "Decide not now.",
+        "effects": {
+          "flags_set": [
+            "delayed_children"
+          ],
+          "stats": {
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "space",
+            "weight": 1,
+            "text": "The flat stays quiet a while longer.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "child_choice",
+    "category": "family",
+    "text": "The question of a child sits between you at breakfast.",
+    "min_age": 30,
+    "max_age": 42,
+    "at_age": 33
+  },
+  {
+    "weight": 11,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "hold_baby",
+    "npc": "",
+    "placeholders": [
+      "child_name"
+    ],
+    "bias": {},
+    "requires": {
+      "has_children": true
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "sit",
+        "label": "Sit with them until sleep.",
+        "effects": {
+          "stats": {
+            "happiness": 4,
+            "stress": 3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "soft",
+            "weight": 1,
+            "text": "The water is an excuse. The company is not.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "trade",
+        "label": "Ask your partner to take a turn.",
+        "effects": {
+          "stats": {
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "turn",
+            "weight": 1,
+            "text": "You sleep. Someone else learns the song.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "parenting_night",
+    "category": "family",
+    "text": "{child_name} is awake and asking for water.",
+    "min_age": 28,
+    "max_age": 55,
+    "at_age": 36
+  },
+  {
+    "weight": 9,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "confused",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "house",
+        "label": "Buy a modest house.",
+        "effects": {
+          "housing": "house",
+          "stats": {
+            "wealth": -70,
+            "happiness": 6
+          },
+          "memorable": "Bought a house."
+        },
+        "outcomes": [
+          {
+            "id": "key",
+            "weight": 1,
+            "text": "The key is ordinary and huge.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "rent",
+        "label": "Keep renting.",
+        "effects": {
+          "flags_set": [
+            "kept_renting"
+          ],
+          "stats": {
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "lease",
+            "weight": 1,
+            "text": "The lease renews. So do you.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "mansion",
+        "label": "Stretch for a mansion.",
+        "effects": {
+          "housing": "mansion",
+          "stats": {
+            "wealth": -180,
+            "stress": 8,
+            "happiness": 4
+          },
+          "memorable": "Moved into a mansion."
+        },
+        "outcomes": [
+          {
+            "id": "echo",
+            "weight": 1,
+            "text": "The rooms echo. The bills do too.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "buy_home",
+    "category": "finance",
+    "text": "A home of your own is suddenly a real choice.",
+    "min_age": 34,
+    "max_age": 55,
+    "at_age": 41
+  },
+  {
+    "weight": 5,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "celebrate",
+    "npc": "",
+    "placeholders": [],
+    "bias": {
+      "luck": 0.6
+    },
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "save",
+        "label": "Save almost all of it.",
+        "effects": {
+          "stats": {
+            "wealth": 50
+          }
+        },
+        "outcomes": [
+          {
+            "id": "quiet",
+            "weight": 1,
+            "text": "The account looks healthier than you feel.",
+            "effects": {},
+            "animation": "earn_money"
+          }
+        ]
+      },
+      {
+        "id": "spend",
+        "label": "Spend it on a better week.",
+        "effects": {
+          "stats": {
+            "wealth": 10,
+            "happiness": 8
+          }
+        },
+        "outcomes": [
+          {
+            "id": "week",
+            "weight": 1,
+            "text": "The week is bright and then gone.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "windfall",
+    "category": "luck",
+    "text": "Unexpected money shows up with your name on it.",
+    "min_age": 30,
+    "max_age": 60,
+    "at_age": 37
+  },
+  {
+    "weight": 12,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": true,
+    "storyline": "",
+    "background": "apartment",
+    "animation": "worried",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "has_debt"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "pay",
+        "label": "Pay a painful chunk now.",
+        "effects": {
+          "debt": -12,
+          "stats": {
+            "wealth": -12,
+            "stress": -3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "lighter",
+            "weight": 1,
+            "text": "The letter gets shorter.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "ignore",
+        "label": "Ignore it this month.",
+        "effects": {
+          "debt": 4,
+          "stats": {
+            "stress": 6
+          }
+        },
+        "outcomes": [
+          {
+            "id": "later",
+            "weight": 1,
+            "text": "Later arrives with interest.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "debt_squeeze",
+    "category": "finance",
+    "text": "A debt letter arrives, printed in stern ink.",
+    "min_age": 26,
+    "max_age": 55,
+    "at_age": 29,
+    "catch_at": 34
+  },
+  {
+    "weight": 8,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "worried",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "help",
+        "label": "Move closer and help.",
+        "effects": {
+          "stats": {
+            "happiness": 2,
+            "stress": 5,
+            "wealth": -8
+          },
+          "memorable": "Cared for a parent."
+        },
+        "outcomes": [
+          {
+            "id": "days",
+            "weight": 1,
+            "text": "The days are long and worth it.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "money",
+        "label": "Send money instead.",
+        "effects": {
+          "stats": {
+            "wealth": -15
+          }
+        },
+        "outcomes": [
+          {
+            "id": "transfer",
+            "weight": 1,
+            "text": "The transfer goes. The worry stays.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "away",
+        "label": "Stay away.",
+        "effects": {
+          "stats": {
+            "stress": 4,
+            "happiness": -4
+          }
+        },
+        "outcomes": [
+          {
+            "id": "distance",
+            "weight": 1,
+            "text": "Distance does not shrink the news.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "parent_health",
+    "category": "family",
+    "text": "A parent is ill and pretending otherwise.",
+    "min_age": 38,
+    "max_age": 60,
+    "at_age": 45
+  },
+  {
+    "weight": 3,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "confused",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "buy",
+        "label": "Buy the ticket.",
+        "effects": {},
+        "outcomes": [
+          {
+            "id": "win",
+            "weight": 1,
+            "text": "The numbers hit. Modestly, gloriously.",
+            "effects": {
+              "stats": {
+                "wealth": 220
+              },
+              "achievement": "Won a modest lottery",
+              "memorable": "Won a modest lottery."
+            },
+            "animation": "celebrate"
+          },
+          {
+            "id": "lose",
+            "weight": 12,
+            "text": "The numbers miss. Dinner is plain.",
+            "effects": {
+              "stats": {
+                "wealth": -2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "skip",
+        "label": "Keep the coins.",
+        "effects": {
+          "stats": {
+            "wealth": 1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "pocket",
+            "weight": 1,
+            "text": "Your pocket stays honest.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "lottery_ticket",
+    "category": "luck",
+    "text": "A lottery ticket could be dinner, or something louder.",
+    "min_age": 28,
+    "max_age": 70,
+    "at_age": 40
+  },
+  {
+    "weight": 4,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "apartment",
+    "animation": "worried",
+    "npc": "",
+    "placeholders": [],
+    "bias": {
+      "risk_tolerance": 1.0
+    },
+    "requires": {},
+    "excludes": {
+      "flags": [
+        "in_prison"
+      ]
+    },
+    "on_present": {},
+    "choices": [
+      {
+        "id": "walk",
+        "label": "Walk away.",
+        "effects": {
+          "stats": {
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "clean",
+            "weight": 1,
+            "text": "You leave with empty hands and a clean name.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "take",
+        "label": "Take the job.",
+        "effects": {},
+        "outcomes": [
+          {
+            "id": "rich",
+            "weight": 1,
+            "text": "The cash arrives. So does a bad sleep.",
+            "effects": {
+              "stats": {
+                "wealth": 90,
+                "stress": 10
+              },
+              "flags_set": [
+                "shady_past"
+              ]
+            }
+          },
+          {
+            "id": "prison",
+            "weight": 1,
+            "text": "It was a trap. Prison sticks.",
+            "effects": {
+              "flags_set": [
+                "in_prison"
+              ],
+              "employment": "none",
+              "career": "",
+              "memorable": "Went to prison."
+            },
+            "animation": "cry"
+          }
+        ]
+      }
+    ],
+    "id": "shady_offer",
+    "category": "crime",
+    "text": "Someone offers fast money and no receipt.",
+    "min_age": 30,
+    "max_age": 50,
+    "at_age": 34
+  },
+  {
+    "weight": 10,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "office",
+    "animation": "angry",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "owns_business"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "settle",
+        "label": "Settle and move on.",
+        "effects": {
+          "stats": {
+            "wealth": -36,
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "papers",
+            "weight": 1,
+            "text": "The papers go away. The money does too.",
+            "effects": {},
+            "animation": "lose_money"
+          }
+        ]
+      },
+      {
+        "id": "fight",
+        "label": "Fight it in court.",
+        "effects": {},
+        "outcomes": [
+          {
+            "id": "win",
+            "weight": 1,
+            "text": "The court sides with you.",
+            "effects": {
+              "stats": {
+                "wealth": 12,
+                "stress": 4
+              }
+            }
+          },
+          {
+            "id": "lose",
+            "weight": 1,
+            "text": "You lose, and the bill is rude.",
+            "effects": {
+              "stats": {
+                "wealth": -48,
+                "stress": 8
+              }
+            },
+            "animation": "lose_money"
+          }
+        ]
+      }
+    ],
+    "id": "business_lawsuit",
+    "category": "finance",
+    "text": "A customer is suing the business you own.",
+    "min_age": 32,
+    "max_age": 60,
+    "at_age": 46
+  },
+  {
+    "weight": 12,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "kathy",
+    "background": "home",
+    "animation": "cry",
+    "npc": "kathy",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "relationship": [
+        "married"
+      ],
+      "flags": [
+        "kathy_married"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "sign",
+        "label": "Sign them.",
+        "effects": {
+          "relationship_status": "separated",
+          "flags_set": [
+            "divorced",
+            "kathy_separated"
+          ],
+          "flags_clear": [
+            "kathy_married"
+          ],
+          "memorable": "Divorced Kathy.",
+          "npc_patch": {
+            "id": "kathy",
+            "name": "Kathy",
+            "role": "ex",
+            "affection_delta": -20,
+            "circumstances": "Separated",
+            "history": "Divorced."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "quiet",
+            "weight": 1,
+            "text": "The pen is louder than the room.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "wait",
+        "label": "Ask to wait and talk.",
+        "effects": {
+          "stats": {
+            "stress": 4
+          },
+          "npc_patch": {
+            "id": "kathy",
+            "affection_delta": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "talk",
+            "weight": 1,
+            "text": "You talk until the paper looks less final.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "divorce_papers",
+    "category": "romance",
+    "text": "Divorce papers sit on the table, waiting for a pen.",
+    "min_age": 36,
+    "max_age": 60,
+    "at_age": 42
+  },
+  {
+    "weight": 9,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "office",
+    "animation": "confused",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "employed"
+      ]
+    },
+    "excludes": {
+      "flags": [
+        "in_prison"
+      ]
+    },
+    "on_present": {},
+    "choices": [
+      {
+        "id": "take",
+        "label": "Take the promotion.",
+        "effects": {
+          "income_delta": 6,
+          "stats": {
+            "stress": 6,
+            "wealth": 10
+          },
+          "achievement": "Promoted at work",
+          "memorable": "Took a promotion."
+        },
+        "outcomes": [
+          {
+            "id": "title",
+            "weight": 1,
+            "text": "The title is heavier than the chair.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "decline",
+        "label": "Decline and keep your evenings.",
+        "effects": {
+          "stats": {
+            "happiness": 4,
+            "stress": -3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "evening",
+            "weight": 1,
+            "text": "Evenings stay yours.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "promotion",
+    "category": "career",
+    "text": "A promotion is offered, with longer days attached.",
+    "min_age": 32,
+    "max_age": 50,
+    "at_age": 38
+  },
+  {
+    "weight": 8,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "office",
+    "animation": "worried",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "employed"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "hunt",
+        "label": "Hunt for work at once.",
+        "effects": {
+          "employment": "none",
+          "income": 0,
+          "stats": {
+            "stress": 8
+          },
+          "flags_set": [
+            "job_hunting"
+          ]
+        },
+        "outcomes": [
+          {
+            "id": "ads",
+            "weight": 1,
+            "text": "The ads are many. The replies are few.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "rest",
+        "label": "Rest before you search.",
+        "effects": {
+          "employment": "none",
+          "income": 0,
+          "stats": {
+            "happiness": -3,
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "pause",
+            "weight": 1,
+            "text": "The pause helps, then the bills speak.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "layoff",
+    "category": "career",
+    "text": "The company calls it restructuring. Your badge stops.",
+    "min_age": 34,
+    "max_age": 55,
+    "at_age": 39
+  },
+  {
+    "weight": 16,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": true,
+    "storyline": "career",
+    "background": "hospital",
+    "animation": "confused",
+    "npc": "",
+    "placeholders": [],
+    "bias": {
+      "ambition": 1.0
+    },
+    "requires": {
+      "flags": [
+        "degree",
+        "prestigious_university"
+      ]
+    },
+    "excludes": {
+      "flags": [
+        "in_prison"
+      ]
+    },
+    "on_present": {},
+    "choices": [
+      {
+        "id": "medicine",
+        "label": "Take the medical path.",
+        "effects": {
+          "career": "Doctor",
+          "employment": "employed",
+          "income": 28,
+          "qualification": "Medical qualification",
+          "achievement": "Became a doctor",
+          "memorable": "Became a doctor."
+        },
+        "outcomes": [
+          {
+            "id": "coat",
+            "weight": 1,
+            "text": "The coat fits. The nights are long.",
+            "effects": {},
+            "animation": "celebrate"
+          }
+        ]
+      },
+      {
+        "id": "engineering",
+        "label": "Take the engineering path.",
+        "effects": {
+          "career": "Engineer",
+          "employment": "employed",
+          "income": 24,
+          "qualification": "Engineering qualification",
+          "achievement": "Became an engineer",
+          "memorable": "Became an engineer."
+        },
+        "outcomes": [
+          {
+            "id": "plan",
+            "weight": 1,
+            "text": "The plans are clean. The pay is too.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "no",
+        "label": "Stay where you are.",
+        "effects": {
+          "stats": {
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "same",
+            "weight": 1,
+            "text": "The old desk remains loyal.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "qualified_offer",
+    "category": "career",
+    "text": "A senior post wants the qualification you earned.",
+    "min_age": 40,
+    "max_age": 58,
+    "at_age": 46,
+    "catch_at": 46
+  },
+  {
+    "weight": 8,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "hospital",
+    "animation": "worried",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "follow",
+        "label": "Follow the advice.",
+        "effects": {
+          "stats": {
+            "health": 8,
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "better",
+            "weight": 1,
+            "text": "The next number is kinder.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "skip",
+        "label": "Skip the follow-up.",
+        "effects": {},
+        "outcomes": [
+          {
+            "id": "fine",
+            "weight": 2,
+            "text": "You feel fine, which is not data.",
+            "effects": {}
+          },
+          {
+            "id": "ill",
+            "weight": 1,
+            "text": "The skipped visit comes back louder.",
+            "effects": {
+              "flags_set": [
+                "ill"
+              ],
+              "stats": {
+                "health": -14
+              },
+              "condition": "untreated illness"
+            }
+          }
+        ]
+      }
+    ],
+    "id": "checkup",
+    "category": "health",
+    "text": "A checkup finds a number your doctor circles twice.",
+    "min_age": 44,
+    "max_age": 70,
+    "at_age": 47
+  },
+  {
+    "weight": 6,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "walk",
+    "npc": "",
+    "placeholders": [],
+    "bias": {
+      "risk_tolerance": 0.8
+    },
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "go",
+        "label": "Go anyway.",
+        "effects": {},
+        "outcomes": [
+          {
+            "id": "story",
+            "weight": 8,
+            "text": "You come home sunburned and glad.",
+            "effects": {
+              "stats": {
+                "happiness": 7,
+                "wealth": -10
+              }
+            }
+          },
+          {
+            "id": "hurt",
+            "weight": 3,
+            "text": "A fall leaves a limp for a season.",
+            "effects": {
+              "stats": {
+                "health": -10
+              },
+              "flags_set": [
+                "injured"
+              ]
+            },
+            "animation": "injured"
+          },
+          {
+            "id": "death",
+            "weight": 1,
+            "text": "The weather turns, and does not turn back.",
+            "effects": {},
+            "death": "accident",
+            "animation": "dying"
+          }
+        ]
+      },
+      {
+        "id": "stay",
+        "label": "Stay home.",
+        "effects": {
+          "stats": {
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "window",
+            "weight": 1,
+            "text": "You watch the rain from a safe chair.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "risk_trip",
+    "category": "adventure",
+    "text": "A last-minute trip promises stories and bad weather.",
+    "min_age": 26,
+    "max_age": 55,
+    "at_age": 43
+  },
+  {
+    "weight": 7,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "ageing",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "dye",
+        "label": "Dye it and carry on.",
+        "effects": {
+          "stats": {
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "bottle",
+            "weight": 1,
+            "text": "The bottle helps the mirror, briefly.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "grey",
+        "label": "Let the silver stay.",
+        "effects": {
+          "stats": {
+            "confidence": 0,
+            "happiness": 3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "own",
+            "weight": 1,
+            "text": "You decide it looks like evidence of living.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "grey_morning",
+    "category": "ageing",
+    "text": "The mirror has started keeping secrets in silver.",
+    "min_age": 48,
+    "max_age": 60,
+    "at_age": 51
+  },
+  {
+    "weight": 12,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "career",
+    "background": "hospital",
+    "animation": "sick",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "employed"
+      ],
+      "any_flags": [
+        "ill",
+        "serious_injury",
+        "smoker"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "rest",
+        "label": "Step back and heal.",
+        "effects": {
+          "employment": "none",
+          "income": 0,
+          "stats": {
+            "health": 10,
+            "stress": -6
+          },
+          "flags_set": [
+            "career_break"
+          ]
+        },
+        "outcomes": [
+          {
+            "id": "slow",
+            "weight": 1,
+            "text": "The days get slower and kinder.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "push",
+        "label": "Push through the hours.",
+        "effects": {
+          "stats": {
+            "health": -12,
+            "wealth": 12,
+            "stress": 8
+          }
+        },
+        "outcomes": [
+          {
+            "id": "grind",
+            "weight": 1,
+            "text": "The paycheck arrives. So does the cough.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "quit",
+        "label": "Quit while you still can.",
+        "effects": {
+          "employment": "none",
+          "income": 0,
+          "stats": {
+            "happiness": 2,
+            "stress": -4
+          }
+        },
+        "outcomes": [
+          {
+            "id": "door",
+            "weight": 1,
+            "text": "You leave the badge on the desk.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "health_vs_job",
+    "category": "health",
+    "text": "Your body asks for rest your job will not give.",
+    "min_age": 50,
+    "max_age": 64,
+    "at_age": 54
+  },
+  {
+    "weight": 7,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "cry",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "there",
+        "label": "Be there for all of it.",
+        "effects": {
+          "stats": {
+            "happiness": -6,
+            "stress": 4
+          },
+          "memorable": "Said goodbye to a parent."
+        },
+        "outcomes": [
+          {
+            "id": "hand",
+            "weight": 1,
+            "text": "You hold a hand until it is time.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "send",
+        "label": "Send love and stay away.",
+        "effects": {
+          "stats": {
+            "happiness": -4,
+            "wealth": -6
+          }
+        },
+        "outcomes": [
+          {
+            "id": "letter",
+            "weight": 1,
+            "text": "The letter is not the same as being there.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "loss_in_family",
+    "category": "tragedy",
+    "text": "The family gathers for a goodbye nobody wanted.",
+    "min_age": 50,
+    "max_age": 75,
+    "at_age": 58
+  },
+  {
+    "weight": 7,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "walk",
+    "npc": "",
+    "placeholders": [
+      "friend_name"
+    ],
+    "bias": {
+      "sociability": 1.0
+    },
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "go",
+        "label": "Take the long trail.",
+        "effects": {
+          "stats": {
+            "fitness": 4,
+            "happiness": 5
+          }
+        },
+        "outcomes": [
+          {
+            "id": "view",
+            "weight": 1,
+            "text": "The view is worth the mud.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "home",
+        "label": "Stay in.",
+        "effects": {
+          "stats": {
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "sofa",
+            "weight": 1,
+            "text": "The sofa has no hills. You like that.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "friend_hike",
+    "category": "social",
+    "text": "{friend_name} wants the long trail before dark.",
+    "min_age": 22,
+    "max_age": 60,
+    "at_age": 27
+  },
+  {
+    "weight": 20,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "",
+    "background": "retirement",
+    "animation": "sit",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "retire",
+        "label": "Retire.",
+        "effects": {
+          "flags_set": [
+            "retired"
+          ],
+          "employment": "none",
+          "income": 4,
+          "memorable": "Retired."
+        },
+        "outcomes": [
+          {
+            "id": "garden",
+            "weight": 1,
+            "text": "Mornings arrive without a badge.",
+            "effects": {},
+            "animation": "celebrate"
+          }
+        ]
+      },
+      {
+        "id": "stay",
+        "label": "Keep working a little longer.",
+        "effects": {
+          "stats": {
+            "stress": 4,
+            "wealth": 8
+          }
+        },
+        "outcomes": [
+          {
+            "id": "desk",
+            "weight": 1,
+            "text": "The desk still wants you. You still go.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "retirement_gate",
+    "category": "ageing",
+    "text": "The calendar says you could stop working.",
+    "min_age": 66,
+    "max_age": 66,
+    "at_age": 66
+  },
+  {
+    "weight": 16,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "",
+    "background": "retirement",
+    "animation": "ageing",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "slower",
+        "label": "Move slower and keep going.",
+        "effects": {
+          "stats": {
+            "health": 3,
+            "stress": -2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "pace",
+            "weight": 1,
+            "text": "Your pace becomes a kind of wisdom.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "ignore",
+        "label": "Ignore the ache.",
+        "effects": {
+          "stats": {
+            "health": -8,
+            "stress": 3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "ache",
+            "weight": 1,
+            "text": "The ache keeps your schedule for you.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "slow_stairs",
+    "category": "ageing",
+    "text": "Stairs take longer than they used to.",
+    "min_age": 72,
+    "max_age": 72,
+    "at_age": 72
+  }
+]

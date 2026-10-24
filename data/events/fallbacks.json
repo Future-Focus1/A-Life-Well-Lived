@@ -1,0 +1,592 @@
+[
+  {
+    "weight": 1,
+    "once": false,
+    "fallback": true,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "idle",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "engage",
+        "label": "Lean into the day.",
+        "effects": {
+          "stats": {
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "good",
+            "weight": 1,
+            "text": "It becomes a good small memory.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "rest",
+        "label": "Rest and let it pass.",
+        "effects": {
+          "stats": {
+            "health": 1,
+            "stress": -1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "calm",
+            "weight": 1,
+            "text": "Calm is enough today.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "fallback_00",
+    "category": "childhood",
+    "text": "A small ordinary day asks nothing heroic.",
+    "min_age": 0,
+    "max_age": 9,
+    "at_age": 0
+  },
+  {
+    "weight": 1,
+    "once": false,
+    "fallback": true,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "school",
+    "animation": "idle",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "engage",
+        "label": "Lean into the day.",
+        "effects": {
+          "stats": {
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "good",
+            "weight": 1,
+            "text": "It becomes a good small memory.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "rest",
+        "label": "Rest and let it pass.",
+        "effects": {
+          "stats": {
+            "health": 1,
+            "stress": -1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "calm",
+            "weight": 1,
+            "text": "Calm is enough today.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "fallback_10",
+    "category": "education",
+    "text": "School, weather, and a joke you repeat.",
+    "min_age": 10,
+    "max_age": 19,
+    "at_age": 10
+  },
+  {
+    "weight": 1,
+    "once": false,
+    "fallback": true,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "apartment",
+    "animation": "idle",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "engage",
+        "label": "Lean into the day.",
+        "effects": {
+          "stats": {
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "good",
+            "weight": 1,
+            "text": "It becomes a good small memory.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "rest",
+        "label": "Rest and let it pass.",
+        "effects": {
+          "stats": {
+            "health": 1,
+            "stress": -1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "calm",
+            "weight": 1,
+            "text": "Calm is enough today.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "fallback_20",
+    "category": "social",
+    "text": "The week is ordinary and still yours.",
+    "min_age": 20,
+    "max_age": 29,
+    "at_age": 20
+  },
+  {
+    "weight": 1,
+    "once": false,
+    "fallback": true,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "office",
+    "animation": "idle",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "engage",
+        "label": "Lean into the day.",
+        "effects": {
+          "stats": {
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "good",
+            "weight": 1,
+            "text": "It becomes a good small memory.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "rest",
+        "label": "Rest and let it pass.",
+        "effects": {
+          "stats": {
+            "health": 1,
+            "stress": -1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "calm",
+            "weight": 1,
+            "text": "Calm is enough today.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "fallback_30",
+    "category": "career",
+    "text": "Work, a meal, and an early night.",
+    "min_age": 30,
+    "max_age": 39,
+    "at_age": 30
+  },
+  {
+    "weight": 1,
+    "once": false,
+    "fallback": true,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "idle",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "engage",
+        "label": "Lean into the day.",
+        "effects": {
+          "stats": {
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "good",
+            "weight": 1,
+            "text": "It becomes a good small memory.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "rest",
+        "label": "Rest and let it pass.",
+        "effects": {
+          "stats": {
+            "health": 1,
+            "stress": -1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "calm",
+            "weight": 1,
+            "text": "Calm is enough today.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "fallback_40",
+    "category": "family",
+    "text": "A regular day with one small kindness.",
+    "min_age": 40,
+    "max_age": 49,
+    "at_age": 40
+  },
+  {
+    "weight": 1,
+    "once": false,
+    "fallback": true,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "home",
+    "animation": "idle",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "engage",
+        "label": "Lean into the day.",
+        "effects": {
+          "stats": {
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "good",
+            "weight": 1,
+            "text": "It becomes a good small memory.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "rest",
+        "label": "Rest and let it pass.",
+        "effects": {
+          "stats": {
+            "health": 1,
+            "stress": -1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "calm",
+            "weight": 1,
+            "text": "Calm is enough today.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "fallback_50",
+    "category": "health",
+    "text": "You notice the afternoon light and rest.",
+    "min_age": 50,
+    "max_age": 59,
+    "at_age": 50
+  },
+  {
+    "weight": 1,
+    "once": false,
+    "fallback": true,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "retirement",
+    "animation": "idle",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "engage",
+        "label": "Lean into the day.",
+        "effects": {
+          "stats": {
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "good",
+            "weight": 1,
+            "text": "It becomes a good small memory.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "rest",
+        "label": "Rest and let it pass.",
+        "effects": {
+          "stats": {
+            "health": 1,
+            "stress": -1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "calm",
+            "weight": 1,
+            "text": "Calm is enough today.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "fallback_60",
+    "category": "ageing",
+    "text": "The day is quiet enough to hear birds.",
+    "min_age": 60,
+    "max_age": 69,
+    "at_age": 60
+  },
+  {
+    "weight": 1,
+    "once": false,
+    "fallback": true,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "retirement",
+    "animation": "idle",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "engage",
+        "label": "Lean into the day.",
+        "effects": {
+          "stats": {
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "good",
+            "weight": 1,
+            "text": "It becomes a good small memory.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "rest",
+        "label": "Rest and let it pass.",
+        "effects": {
+          "stats": {
+            "health": 1,
+            "stress": -1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "calm",
+            "weight": 1,
+            "text": "Calm is enough today.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "fallback_70",
+    "category": "ageing",
+    "text": "Tea, a chair, and a story retold.",
+    "min_age": 70,
+    "max_age": 79,
+    "at_age": 70
+  },
+  {
+    "weight": 1,
+    "once": false,
+    "fallback": true,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "retirement",
+    "animation": "idle",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "engage",
+        "label": "Lean into the day.",
+        "effects": {
+          "stats": {
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "good",
+            "weight": 1,
+            "text": "It becomes a good small memory.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "rest",
+        "label": "Rest and let it pass.",
+        "effects": {
+          "stats": {
+            "health": 1,
+            "stress": -1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "calm",
+            "weight": 1,
+            "text": "Calm is enough today.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "fallback_80",
+    "category": "ageing",
+    "text": "The morning is slow and surprisingly sweet.",
+    "min_age": 80,
+    "max_age": 89,
+    "at_age": 80
+  },
+  {
+    "weight": 1,
+    "once": false,
+    "fallback": true,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "",
+    "background": "retirement",
+    "animation": "idle",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "engage",
+        "label": "Lean into the day.",
+        "effects": {
+          "stats": {
+            "happiness": 2
+          }
+        },
+        "outcomes": [
+          {
+            "id": "good",
+            "weight": 1,
+            "text": "It becomes a good small memory.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "rest",
+        "label": "Rest and let it pass.",
+        "effects": {
+          "stats": {
+            "health": 1,
+            "stress": -1
+          }
+        },
+        "outcomes": [
+          {
+            "id": "calm",
+            "weight": 1,
+            "text": "Calm is enough today.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "fallback_90",
+    "category": "ageing",
+    "text": "Another day arrives. You greet it.",
+    "min_age": 90,
+    "max_age": 109,
+    "at_age": 90
+  }
+]

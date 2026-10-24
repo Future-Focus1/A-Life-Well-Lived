@@ -1,0 +1,42 @@
+﻿; Engine configuration file.
+; A Life Well Played — portrait life simulation.
+
+config_version=5
+
+[application]
+
+config/name="A Life Well Played"
+config/description="A portrait life simulation. One character, two ways through time."
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="res://icon.png"
+
+[autoload]
+
+AnimationController="*res://scripts/autoloads/animation_controller.gd"
+ArchiveManager="*res://scripts/autoloads/archive_manager.gd"
+CharacterManager="*res://scripts/autoloads/character_manager.gd"
+ConsequenceManager="*res://scripts/autoloads/consequence_manager.gd"
+EventManager="*res://scripts/autoloads/event_manager.gd"
+LifeHistoryManager="*res://scripts/autoloads/life_history_manager.gd"
+NarrativeManager="*res://scripts/autoloads/narrative_manager.gd"
+RelationshipManager="*res://scripts/autoloads/relationship_manager.gd"
+SaveManager="*res://scripts/autoloads/save_manager.gd"
+TimeManager="*res://scripts/autoloads/time_manager.gd"
+GameManager="*res://scripts/autoloads/game_manager.gd"
+
+[display]
+
+window/size/viewport_width=360
+window/size/viewport_height=640
+window/size/window_width_override=720
+window/size/window_height_override=1280
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

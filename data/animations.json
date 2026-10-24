@@ -1,0 +1,167 @@
+{
+  "frame_size": [
+    32,
+    48
+  ],
+  "columns": 8,
+  "palette": true,
+  "stages": {
+    "baby": "res://assets/characters/baby.png",
+    "child": "res://assets/characters/child.png",
+    "teen": "res://assets/characters/teen.png",
+    "young_adult": "res://assets/characters/young_adult.png",
+    "adult": "res://assets/characters/adult.png",
+    "middle_aged": "res://assets/characters/middle_aged.png",
+    "elderly": "res://assets/characters/elderly.png",
+    "very_elderly": "res://assets/characters/very_elderly.png"
+  },
+  "animations": {
+    "idle": {
+      "start": 0,
+      "frames": 4,
+      "fps": 4,
+      "loop": true,
+      "hold": 1.2
+    },
+    "walk": {
+      "start": 4,
+      "frames": 4,
+      "fps": 8,
+      "loop": true,
+      "hold": 1.4
+    },
+    "sleep": {
+      "start": 8,
+      "frames": 2,
+      "fps": 2,
+      "loop": true,
+      "hold": 1.6
+    },
+    "sit": {
+      "start": 10,
+      "frames": 2,
+      "fps": 2,
+      "loop": true,
+      "hold": 1.2
+    },
+    "jump": {
+      "start": 12,
+      "frames": 2,
+      "fps": 8,
+      "loop": false,
+      "hold": 1.2
+    },
+    "laugh": {
+      "start": 14,
+      "frames": 2,
+      "fps": 6,
+      "loop": true,
+      "hold": 1.5
+    },
+    "cry": {
+      "start": 16,
+      "frames": 2,
+      "fps": 3,
+      "loop": true,
+      "hold": 1.6
+    },
+    "celebrate": {
+      "start": 18,
+      "frames": 2,
+      "fps": 6,
+      "loop": true,
+      "hold": 1.8
+    },
+    "confused": {
+      "start": 20,
+      "frames": 2,
+      "fps": 3,
+      "loop": true,
+      "hold": 1.4
+    },
+    "worried": {
+      "start": 22,
+      "frames": 2,
+      "fps": 3,
+      "loop": true,
+      "hold": 1.5
+    },
+    "angry": {
+      "start": 24,
+      "frames": 2,
+      "fps": 4,
+      "loop": true,
+      "hold": 1.4
+    },
+    "love": {
+      "start": 26,
+      "frames": 2,
+      "fps": 4,
+      "loop": true,
+      "hold": 1.6
+    },
+    "embarrassed": {
+      "start": 28,
+      "frames": 2,
+      "fps": 3,
+      "loop": true,
+      "hold": 1.4
+    },
+    "sick": {
+      "start": 30,
+      "frames": 2,
+      "fps": 2,
+      "loop": true,
+      "hold": 1.8
+    },
+    "injured": {
+      "start": 32,
+      "frames": 2,
+      "fps": 2,
+      "loop": true,
+      "hold": 1.6
+    },
+    "hug": {
+      "start": 34,
+      "frames": 2,
+      "fps": 3,
+      "loop": true,
+      "hold": 1.5
+    },
+    "hold_baby": {
+      "start": 36,
+      "frames": 2,
+      "fps": 3,
+      "loop": true,
+      "hold": 1.8
+    },
+    "earn_money": {
+      "start": 38,
+      "frames": 2,
+      "fps": 5,
+      "loop": false,
+      "hold": 1.5
+    },
+    "lose_money": {
+      "start": 40,
+      "frames": 2,
+      "fps": 5,
+      "loop": false,
+      "hold": 1.5
+    },
+    "ageing": {
+      "start": 42,
+      "frames": 2,
+      "fps": 3,
+      "loop": false,
+      "hold": 2.0
+    },
+    "dying": {
+      "start": 44,
+      "frames": 3,
+      "fps": 2,
+      "loop": false,
+      "hold": 2.4
+    }
+  }
+}

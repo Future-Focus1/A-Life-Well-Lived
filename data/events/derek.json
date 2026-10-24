@@ -1,0 +1,785 @@
+[
+  {
+    "weight": 50,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "derek",
+    "background": "office",
+    "animation": "confused",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {},
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "solo",
+        "label": "Quit and start a business.",
+        "effects": {
+          "flags_set": [
+            "owns_business"
+          ],
+          "employment": "self",
+          "career": "Founder",
+          "income": 10,
+          "stats": {
+            "wealth": -12,
+            "stress": 8
+          },
+          "memorable": "Started a business."
+        },
+        "outcomes": [
+          {
+            "id": "sign",
+            "weight": 1,
+            "text": "The sign is cheap. The hope is not.",
+            "effects": {},
+            "animation": "earn_money"
+          }
+        ]
+      },
+      {
+        "id": "steady",
+        "label": "Keep the steady job.",
+        "effects": {
+          "employment": "employed",
+          "income": 9,
+          "career": "Clerk"
+        },
+        "outcomes": [
+          {
+            "id": "badge",
+            "weight": 1,
+            "text": "The badge still works. So do you.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "partner",
+        "label": "Partner with Derek.",
+        "effects": {
+          "flags_set": [
+            "owns_business",
+            "derek_partners"
+          ],
+          "employment": "self",
+          "career": "Partner",
+          "income": 14,
+          "stats": {
+            "happiness": 4
+          },
+          "memorable": "Started a business with Derek.",
+          "relationship_note": "Business partners with Derek.",
+          "npc_patch": {
+            "id": "derek",
+            "name": "Derek",
+            "affection_delta": 12,
+            "role": "partner",
+            "history": "Started a business together.",
+            "circumstances": "Business partner"
+          }
+        },
+        "outcomes": [
+          {
+            "id": "keys",
+            "weight": 1,
+            "text": "You both get a key. He grins too wide.",
+            "effects": {}
+          }
+        ],
+        "requires": {
+          "flags": [
+            "met_derek"
+          ],
+          "missing_flags": [
+            "derek_dead",
+            "derek_in_prison"
+          ],
+          "npc_id": "derek",
+          "npc_alive": true
+        }
+      },
+      {
+        "id": "refuse",
+        "label": "Tell Derek no.",
+        "effects": {
+          "flags_set": [
+            "refused_derek"
+          ],
+          "npc_patch": {
+            "id": "derek",
+            "affection_delta": -8,
+            "history": "Turned down the partnership."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "cool",
+            "weight": 1,
+            "text": "He shrugs. The air cools a little.",
+            "effects": {}
+          }
+        ],
+        "requires": {
+          "flags": [
+            "met_derek"
+          ],
+          "missing_flags": [
+            "derek_dead"
+          ],
+          "npc_id": "derek",
+          "npc_alive": true
+        }
+      }
+    ],
+    "id": "business_fork",
+    "category": "career",
+    "text": "Work feels small. A business could be yours.",
+    "min_age": 24,
+    "max_age": 24,
+    "at_age": 24
+  },
+  {
+    "weight": 24,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "career",
+    "background": "office",
+    "animation": "earn_money",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "skipped_university"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "shop",
+        "label": "Open a shop of your own.",
+        "effects": {
+          "flags_set": [
+            "owns_business",
+            "trade_path"
+          ],
+          "career": "Shop owner",
+          "employment": "self",
+          "income": 16,
+          "housing": "apartment",
+          "achievement": "Opened a shop",
+          "memorable": "Opened a shop."
+        },
+        "outcomes": [
+          {
+            "id": "bell",
+            "weight": 1,
+            "text": "The door bell works. Customers follow.",
+            "effects": {},
+            "animation": "celebrate"
+          }
+        ]
+      },
+      {
+        "id": "crew",
+        "label": "Stay on the crew and master it.",
+        "effects": {
+          "career": "Tradesperson",
+          "employment": "employed",
+          "income": 12,
+          "qualification": "Trade certificate"
+        },
+        "outcomes": [
+          {
+            "id": "skill",
+            "weight": 1,
+            "text": "The hard jobs start coming to you.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "trade_rise",
+    "category": "career",
+    "text": "Your hands are faster than the new apprentices.",
+    "min_age": 27,
+    "max_age": 27,
+    "at_age": 27
+  },
+  {
+    "weight": 20,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "derek",
+    "background": "office",
+    "animation": "celebrate",
+    "npc": "derek",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "derek_partners"
+      ],
+      "missing_flags": [
+        "derek_partners_ended",
+        "derek_dead",
+        "derek_in_prison"
+      ],
+      "npc_id": "derek",
+      "npc_alive": true
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "expand",
+        "label": "Expand the business.",
+        "effects": {
+          "stats": {
+            "wealth": 40,
+            "stress": 6
+          },
+          "income_delta": 4
+        },
+        "outcomes": [
+          {
+            "id": "busy",
+            "weight": 1,
+            "text": "More orders. Less sleep. Better shoes.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "careful",
+        "label": "Keep it small and careful.",
+        "effects": {
+          "stats": {
+            "wealth": 18,
+            "happiness": 3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "steady",
+            "weight": 1,
+            "text": "The books stay boring, which is perfect.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "derek_success",
+    "category": "finance",
+    "text": "The business with Derek is actually working.",
+    "min_age": 31,
+    "max_age": 31,
+    "at_age": 31
+  },
+  {
+    "weight": 20,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "kathy",
+    "background": "home",
+    "animation": "worried",
+    "npc": "kathy",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "kathy_married",
+        "derek_partners"
+      ],
+      "missing_flags": [
+        "derek_dead",
+        "divorced"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "kathy_side",
+        "label": "Side with Kathy tonight.",
+        "effects": {
+          "stats": {
+            "stress": -2
+          },
+          "npc_patch": {
+            "id": "kathy",
+            "affection_delta": 8,
+            "history": "You chose Kathy over the business call."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "quiet",
+            "weight": 1,
+            "text": "The phone goes unanswered. Dinner is kinder.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "derek_side",
+        "label": "Take Derek's call.",
+        "effects": {
+          "flags_set": [
+            "marriage_strain"
+          ],
+          "stats": {
+            "stress": 6
+          },
+          "npc_patch": {
+            "id": "kathy",
+            "affection_delta": -10,
+            "history": "A business call ruined dinner."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "late",
+            "weight": 1,
+            "text": "You come back to a colder kitchen.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "mediate",
+        "label": "Ask them both for one calm talk.",
+        "effects": {
+          "stats": {
+            "charisma": 3
+          },
+          "npc_patch": {
+            "id": "kathy",
+            "affection_delta": 3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "truce",
+            "weight": 1,
+            "text": "It is not peace, but it is a truce.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "strain_marriage",
+    "category": "family",
+    "text": "Derek keeps calling. Kathy has stopped smiling about it.",
+    "min_age": 40,
+    "max_age": 40,
+    "at_age": 40
+  },
+  {
+    "weight": 30,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "derek",
+    "background": "office",
+    "animation": "angry",
+    "npc": "derek",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "derek_partners"
+      ],
+      "missing_flags": [
+        "derek_dead",
+        "derek_in_prison",
+        "derek_partners_ended"
+      ],
+      "npc_id": "derek",
+      "npc_alive": true
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "confront",
+        "label": "Confront him with the books.",
+        "effects": {},
+        "outcomes": [
+          {
+            "id": "repay",
+            "weight": 45,
+            "text": "He pays it back and cannot meet your eye.",
+            "effects": {
+              "flags_set": [
+                "derek_ashamed"
+              ],
+              "stats": {
+                "wealth": 24
+              },
+              "npc_patch": {
+                "id": "derek",
+                "affection_delta": -18,
+                "history": "Repaid what he skimmed."
+              }
+            }
+          },
+          {
+            "id": "prison",
+            "weight": 40,
+            "text": "You report him. Prison sticks.",
+            "effects": {
+              "flags_set": [
+                "derek_in_prison",
+                "derek_betrayed"
+              ],
+              "memorable": "Derek went to prison for skimming.",
+              "npc_patch": {
+                "id": "derek",
+                "alive": true,
+                "role": "inmate",
+                "affection_delta": -30,
+                "circumstances": "In prison",
+                "history": "Sent to prison for skimming."
+              }
+            },
+            "animation": "cry"
+          },
+          {
+            "id": "death",
+            "weight": 15,
+            "text": "The scandal ends him. He does not return.",
+            "effects": {
+              "flags_set": [
+                "derek_dead",
+                "derek_betrayed"
+              ],
+              "memorable": "Derek died after the embezzlement.",
+              "npc_patch": {
+                "id": "derek",
+                "alive": false,
+                "role": "lost",
+                "circumstances": "Died after the scandal",
+                "history": "Died after the embezzlement."
+              }
+            },
+            "animation": "cry"
+          }
+        ]
+      },
+      {
+        "id": "ignore",
+        "label": "Ignore the missing money.",
+        "effects": {
+          "flags_set": [
+            "derek_betrayed"
+          ],
+          "stats": {
+            "wealth": -28,
+            "stress": 8
+          },
+          "npc_patch": {
+            "id": "derek",
+            "affection_delta": -6
+          }
+        },
+        "outcomes": [
+          {
+            "id": "hole",
+            "weight": 1,
+            "text": "The hole in the books gets wider.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "join",
+        "label": "Skim a little yourself.",
+        "effects": {},
+        "outcomes": [
+          {
+            "id": "away",
+            "weight": 55,
+            "text": "You get away with it. The flat improves.",
+            "effects": {
+              "stats": {
+                "wealth": 36,
+                "stress": 8
+              },
+              "flags_set": [
+                "shady_past"
+              ]
+            }
+          },
+          {
+            "id": "caught",
+            "weight": 45,
+            "text": "You are both caught. Prison sticks.",
+            "effects": {
+              "flags_set": [
+                "in_prison",
+                "derek_in_prison",
+                "derek_betrayed"
+              ],
+              "employment": "none",
+              "career": "",
+              "memorable": "Went to prison.",
+              "npc_patch": {
+                "id": "derek",
+                "alive": true,
+                "role": "inmate",
+                "circumstances": "In prison"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "label": "Leave the partnership.",
+        "effects": {
+          "flags_set": [
+            "derek_partners_ended"
+          ],
+          "stats": {
+            "stress": -3
+          }
+        },
+        "outcomes": [
+          {
+            "id": "walk",
+            "weight": 1,
+            "text": "You leave the keys and the mess.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "derek_embezzle",
+    "category": "crime",
+    "text": "The books do not match. Derek has been skimming.",
+    "min_age": 36,
+    "max_age": 36,
+    "at_age": 36
+  },
+  {
+    "weight": 12,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "derek",
+    "background": "office",
+    "animation": "cry",
+    "npc": "derek",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "derek_in_prison"
+      ],
+      "missing_flags": [
+        "derek_dead"
+      ],
+      "npc_id": "derek",
+      "npc_alive": true
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "visit",
+        "label": "Visit and listen.",
+        "effects": {
+          "npc_patch": {
+            "id": "derek",
+            "affection_delta": 6,
+            "history": "You visited Derek in prison."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "glass",
+            "weight": 1,
+            "text": "The glass is thick. He still talks.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "cut",
+        "label": "Cut off contact.",
+        "effects": {
+          "npc_patch": {
+            "id": "derek",
+            "affection_delta": -15,
+            "history": "You stopped visiting."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "quiet",
+            "weight": 1,
+            "text": "Thursdays become ordinary again.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "prison_visit",
+    "category": "crime",
+    "text": "Derek is allowed visitors on Thursdays.",
+    "min_age": 41,
+    "max_age": 50,
+    "at_age": 43
+  },
+  {
+    "weight": 14,
+    "once": true,
+    "fallback": false,
+    "priority": false,
+    "catch_up": false,
+    "storyline": "derek",
+    "background": "home",
+    "animation": "cry",
+    "npc": "",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "derek_dead"
+      ]
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "mourn",
+        "label": "Mourn him properly.",
+        "effects": {
+          "stats": {
+            "happiness": -6
+          },
+          "memorable": "Mourned Derek."
+        },
+        "outcomes": [
+          {
+            "id": "name",
+            "weight": 1,
+            "text": "You say his name out loud once.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "silent",
+        "label": "Stay silent and work.",
+        "effects": {
+          "stats": {
+            "stress": 5
+          }
+        },
+        "outcomes": [
+          {
+            "id": "busy",
+            "weight": 1,
+            "text": "The work does not ask questions.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "derek_gone",
+    "category": "tragedy",
+    "text": "The news is short. Derek has died.",
+    "min_age": 40,
+    "max_age": 60,
+    "at_age": 44
+  },
+  {
+    "weight": 16,
+    "once": true,
+    "fallback": false,
+    "priority": true,
+    "catch_up": false,
+    "storyline": "derek",
+    "background": "home",
+    "animation": "confused",
+    "npc": "derek",
+    "placeholders": [],
+    "bias": {},
+    "requires": {
+      "flags": [
+        "derek_betrayed"
+      ],
+      "missing_flags": [
+        "derek_dead"
+      ],
+      "npc_id": "derek",
+      "npc_alive": true
+    },
+    "excludes": {},
+    "on_present": {},
+    "choices": [
+      {
+        "id": "hear",
+        "label": "Hear him out.",
+        "effects": {
+          "flags_clear": [
+            "derek_betrayed"
+          ],
+          "npc_patch": {
+            "id": "derek",
+            "affection_delta": 14,
+            "history": "You talked after the break."
+          }
+        },
+        "outcomes": [
+          {
+            "id": "thin",
+            "weight": 1,
+            "text": "Trust comes back thin, but real.",
+            "effects": {}
+          }
+        ]
+      },
+      {
+        "id": "no",
+        "label": "Refuse the conversation.",
+        "effects": {
+          "npc_patch": {
+            "id": "derek",
+            "affection_delta": -8
+          }
+        },
+        "outcomes": [
+          {
+            "id": "closed",
+            "weight": 1,
+            "text": "The door stays a door.",
+            "effects": {}
+          }
+        ]
+      }
+    ],
+    "id": "derek_reconcile",
+    "category": "social",
+    "text": "Derek asks for a talk you both avoided.",
+    "min_age": 48,
+    "max_age": 60,
+    "at_age": 52
+  }
+]
